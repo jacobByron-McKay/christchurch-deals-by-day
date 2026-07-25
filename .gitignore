@@ -1,0 +1,17 @@
+# working files — not part of the published site
+merge_chch.py
+geocode_chch.py
+geocode_photon.py
+geocode.log
+geocode_cache.json
+*.bak*
+og-image-source.html
+og-image-source-*.html
+.netlify/
+node_modules/
+.DS_Store
+
+avatar-source.html
+fb-cover-source.html
+avatar-chch.png
+fb-cover.png
