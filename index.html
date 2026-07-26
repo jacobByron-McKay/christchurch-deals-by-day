@@ -932,19 +932,15 @@ let showCosyOnly      = false;   // "Cosy" filter — show only deals tagged cos
 // hides itself entirely rather than showing an empty section.
 const CLUB_RUGBY_ENABLED = false;   // OFF for Christchurch — no Canterbury club-rugby fixture data (Welly-specific)
 let showClubRugby     = false;   // Club Rugby tab — default OFF; reveals the fixtures section
-// FRIED CHICKEN leaderboard tab feature flag. This repurposes the WOAP "special tab" slot (the
-// internal identifiers stay woap*/WOAP_* to minimise churn, but everything user-facing is fried
-// chicken). Christchurch's own take on Welly's Burger Wellington board: rank the city's fried-chicken
-// spots, rate the ones you've tried, add photos. Data lives in friedchicken.json.
-const WOAP_ENABLED    = true;
-let showWoap          = false;   // Fried Chicken tab — default OFF; the toggle reveals the leaderboard
-let woapView          = "board"; // "board" (leaderboard) | "map" (dedicated fried-chicken map)
-// Default leaderboard rank column. 'google' = Google rating (used now, while user ratings are still
-// thin), 'rating' = user star-rating average, 'ratings' = number of user ratings. Flip WOAP_DEFAULT_SORT
-// to 'rating' once enough people have rated to make the community score the headline.
-const WOAP_DEFAULT_SORT = 'google';
-let woapLbSort        = WOAP_DEFAULT_SORT; // active rank column: "google" | "rating" (avg stars) | "ratings" (count)
-const WOAP_RATINGS    = {};      // item slug → { avg, count }, batch-read from Supabase for the leaderboard
+// WOAP Burgers ("Burger Wellington") tab feature flag. Built for Visa Wellington on a Plate's
+// Burger Wellington festival, 3-23 August 2026. Kept DARK (false) until the real ~244-burger
+// dataset has been scraped into woap_burgers.json — while false, the toggle bar + section hide
+// themselves entirely and the burger data is never fetched. Flip to true to launch.
+const WOAP_ENABLED    = false;
+let showWoap          = false;   // WOAP tab — default OFF; reveals the Burger Wellington leaderboard
+let woapView          = "board"; // "board" (leaderboard) | "map" (dedicated burger map)
+let woapLbSort        = "rating"; // leaderboard rank column: "rating" (avg stars) | "ratings" (number of ratings)
+const WOAP_RATINGS    = {};      // burger slug → { avg, count }, batch-read from Supabase for the leaderboard
 let searchQuery       = "";      // live search string
 let DAILY_DEAL_KEYS   = new Set(); // populated after data load
 
@@ -1493,23 +1489,10 @@ function fetchWoapRatings() {
 
 function woapPriceNum(b) { const m = String(b.price || '').match(/[\d.]+/); return m ? parseFloat(m[0]) : Infinity; }
 
-function woapGoogleRating(b) { return (typeof b.google_rating === 'number') ? b.google_rating : null; }
-
-// Leaderboard ordering. Three rankable columns: Google rating (default), user star average, and
-// number of user ratings. Whichever column is active, spots with no value for it sort to the bottom
-// (alphabetical among themselves) — unrated is never treated as 0.
+// Leaderboard ordering. Two rankable columns: average rating and number of ratings.
+// Either way, burgers with no ratings yet sort to the bottom (alphabetical among themselves).
 function woapLeaderboardSorted(list) {
   const arr = [...list];
-  if (woapLbSort === 'google') {                                   // rank by Google rating
-    return arr.sort((a, b) => {
-      const ga = woapGoogleRating(a), gb = woapGoogleRating(b);
-      if ((ga === null) !== (gb === null)) return ga === null ? 1 : -1;  // rated ahead of unrated (unrated last)
-      if (ga !== null && gb !== null && gb !== ga) return gb - ga;
-      const ca = b.google_reviews || 0, cb2 = a.google_reviews || 0;     // tie-break: more Google reviews first
-      if (ca !== cb2) return ca - cb2;
-      return (a.name || '').localeCompare(b.name || '');
-    });
-  }
   return arr.sort((a, b) => {
     const ra = WOAP_RATINGS[woapBurgerSlug(a)] || { avg: 0, count: 0 };
     const rb = WOAP_RATINGS[woapBurgerSlug(b)] || { avg: 0, count: 0 };
@@ -1625,13 +1608,14 @@ function renderWoapBoard() {
        <div class="woap-lb">
          <div class="woap-lb-head">
            <span class="woap-lb-h" style="text-align:center;">#</span>
-           <span class="woap-lb-h">Burger</span>
+           <span class="woap-lb-h">Fried chicken</span>
+           <button type="button" class="woap-lb-sort${woapLbSort === 'google' ? ' on' : ''}" data-lb-sort="google">Google${woapLbSort === 'google' ? ' ' + caret : ''}</button>
            <button type="button" class="woap-lb-sort${woapLbSort === 'rating' ? ' on' : ''}" data-lb-sort="rating">Avg${woapLbSort === 'rating' ? ' ' + caret : ''}</button>
-           <button type="button" class="woap-lb-sort${woapLbSort === 'ratings' ? ' on' : ''}" data-lb-sort="ratings">Ratings${woapLbSort === 'ratings' ? ' ' + caret : ''}</button>
+           <button type="button" class="woap-lb-sort${woapLbSort === 'ratings' ? ' on' : ''}" data-lb-sort="ratings">Votes${woapLbSort === 'ratings' ? ' ' + caret : ''}</button>
          </div>
          ${shown.map((b, i) => renderWoapRow(b, i + 1)).join('')}
        </div>`
-    : `<p class="text-sm italic" style="color:var(--ink-muted);">No burgers match your search.</p>`;
+    : `<p class="text-sm italic" style="color:var(--ink-muted);">No spots match your search.</p>`;
 }
 
 // Switch between the leaderboard and the map. The map's Leaflet instance builds on first open.
