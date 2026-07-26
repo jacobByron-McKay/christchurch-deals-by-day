@@ -443,12 +443,12 @@
   .woap-lb-topline { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
   .woap-tried-count { font-size:12px; font-weight:700; color:var(--wr-dark); margin-left:auto; }
   .woap-lb { border:1px solid var(--border); border-radius:12px; overflow:hidden; }
-  .woap-lb-head { display:grid; grid-template-columns:34px 1fr 74px 74px; align-items:center; gap:6px; padding:9px 12px; background:var(--wr-soft); border-bottom:1px solid var(--wr-border); }
+  .woap-lb-head { display:grid; grid-template-columns:30px 1fr 56px 56px 56px; align-items:center; gap:6px; padding:9px 12px; background:var(--wr-soft); border-bottom:1px solid var(--wr-border); }
   .woap-lb-head .woap-lb-h { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--wr-deep); }
   .woap-lb-sort { font:inherit; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--wr-deep); background:none; border:0; cursor:pointer; padding:0; text-align:center; display:inline-flex; align-items:center; justify-content:center; gap:3px; width:100%; }
   .woap-lb-sort.on { color:var(--wr); }
   .woap-lb-sort .caret { font-size:9px; opacity:.85; }
-  .woap-lb-row { display:grid; grid-template-columns:34px 1fr 74px 74px; align-items:center; gap:6px; padding:9px 12px; border-top:1px solid var(--border); cursor:pointer; background:var(--paper); }
+  .woap-lb-row { display:grid; grid-template-columns:30px 1fr 56px 56px 56px; align-items:center; gap:6px; padding:9px 12px; border-top:1px solid var(--border); cursor:pointer; background:var(--paper); }
   .woap-lb-row:first-child { border-top:0; }
   .woap-lb-row:hover { background:var(--wr-soft); }
   .woap-lb-row.open { background:var(--wr-soft); }
@@ -462,6 +462,9 @@
   .woap-lb-avg { font-size:14px; font-weight:800; color:var(--wr-dark); text-align:center; }
   .woap-lb-avg small { display:block; font-size:9px; font-weight:600; color:var(--ink-muted); }
   .woap-lb-avg.none { color:var(--ink-muted); font-weight:600; font-size:11px; }
+  .woap-lb-google { font-size:13.5px; font-weight:800; color:var(--wr-dark); text-align:center; }
+  .woap-lb-google small { display:block; font-size:9px; font-weight:600; color:var(--ink-muted); }
+  .woap-lb-google.none { color:var(--ink-muted); font-weight:600; font-size:11px; }
   .woap-lb-count { font-size:14px; font-weight:800; color:var(--ink); text-align:center; }
   .woap-lb-detail { grid-column:1 / -1; display:none; padding-top:4px; }
   .woap-lb-row.open + .woap-lb-detailrow { display:block; }
@@ -706,14 +709,14 @@
   </div>
 </section>
 
-<!-- WOAP Burgers tab — NEW, default OFF. Its own toggle up top; the community leaderboard the
-     official festival does not run. Hidden entirely while WOAP_ENABLED is false. -->
+<!-- Fried Chicken leaderboard tab — its own toggle up top. Christchurch's best fried-chicken spots,
+     ranked by Google rating and rated by locals. Hidden entirely while WOAP_ENABLED is false. -->
 <div id="woapBar" class="max-w-4xl mx-auto px-4 pt-4">
   <button id="woapToggle" type="button" aria-expanded="false"
           class="w-full flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5"
           style="border-color:#fecaca;background:#fef2f2;color:#991b1b;cursor:pointer;">
     <span class="flex items-center gap-2 text-sm font-semibold">
-      <span>&#127828;</span> Burger Wellington &mdash; WOAP 2026
+      <span>&#127831;</span> Christchurch's Best Fried Chicken
       <span class="woap-badge">NEW</span>
     </span>
     <span id="woapToggleState" class="text-xs font-medium px-2.5 py-0.5 rounded-full border shrink-0"
@@ -721,25 +724,25 @@
   </button>
 </div>
 
-<!-- WOAP Burgers section (revealed by the toggle above) -->
+<!-- Fried Chicken section (revealed by the toggle above) -->
 <section class="max-w-4xl mx-auto px-4 pt-3" id="woapSection" style="display:none;">
   <div class="rounded-lg border p-4" style="border-color:var(--wr-border);background:var(--card);">
     <div class="flex items-baseline gap-3 mb-1">
-      <h2 class="text-lg font-semibold tracking-tight" style="color:var(--wr-deep);">Burger Wellington</h2>
-      <span class="text-xs" style="color:var(--ink-muted);">Visa Wellington on a Plate &middot; 3&ndash;23 Aug 2026</span>
+      <h2 class="text-lg font-semibold tracking-tight" style="color:var(--wr-deep);">Christchurch's Best Fried Chicken</h2>
+      <span class="text-xs" style="color:var(--ink-muted);">Ōtautahi &middot; ranked by Google, rated by you</span>
     </div>
-    <p class="text-sm mb-4" style="color:var(--ink-muted);">Every festival burger, ranked by what Wellington actually thinks. Find them on the map, rate the ones you have tried, and leave a photo and a review.</p>
+    <p class="text-sm mb-4" style="color:var(--ink-muted);">The city's fried-chicken spots, Korean and Southern, ranked by their Google rating to start. Find them on the map, rate the ones you have tried, and add a photo and a review to build the local ranking.</p>
     <!-- Map / Leaderboard segmented toggle -->
-    <div class="woap-viewtabs" role="tablist" aria-label="Burger view">
+    <div class="woap-viewtabs" role="tablist" aria-label="Fried chicken view">
       <button type="button" class="woap-viewtab on" data-woap-view="board" role="tab" aria-selected="true">&#127942; Leaderboard</button>
       <button type="button" class="woap-viewtab" data-woap-view="map" role="tab" aria-selected="false">&#128506; Map</button>
     </div>
     <!-- Leaderboard sub-view -->
     <div id="woapBoard"></div>
-    <!-- Map sub-view (its own dedicated burger map; Leaflet loads lazily on first open) -->
+    <!-- Map sub-view (its own dedicated fried-chicken map; Leaflet loads lazily on first open) -->
     <div id="woapMapWrap" class="woap-map-wrap">
       <div id="woapMap" class="woap-map"></div>
-      <p class="woap-map-note" id="woapMapNote">All 244 festival burgers across Wellington. Tap a pin for the photo, price and rating.</p>
+      <p class="woap-map-note" id="woapMapNote">Christchurch's fried-chicken spots across the city. Tap a pin for the photo, rating and what to order.</p>
     </div>
   </div>
 </section>
@@ -932,15 +935,19 @@ let showCosyOnly      = false;   // "Cosy" filter — show only deals tagged cos
 // hides itself entirely rather than showing an empty section.
 const CLUB_RUGBY_ENABLED = false;   // OFF for Christchurch — no Canterbury club-rugby fixture data (Welly-specific)
 let showClubRugby     = false;   // Club Rugby tab — default OFF; reveals the fixtures section
-// WOAP Burgers ("Burger Wellington") tab feature flag. Built for Visa Wellington on a Plate's
-// Burger Wellington festival, 3-23 August 2026. Kept DARK (false) until the real ~244-burger
-// dataset has been scraped into woap_burgers.json — while false, the toggle bar + section hide
-// themselves entirely and the burger data is never fetched. Flip to true to launch.
-const WOAP_ENABLED    = false;
-let showWoap          = false;   // WOAP tab — default OFF; reveals the Burger Wellington leaderboard
-let woapView          = "board"; // "board" (leaderboard) | "map" (dedicated burger map)
-let woapLbSort        = "rating"; // leaderboard rank column: "rating" (avg stars) | "ratings" (number of ratings)
-const WOAP_RATINGS    = {};      // burger slug → { avg, count }, batch-read from Supabase for the leaderboard
+// FRIED CHICKEN leaderboard tab feature flag. This repurposes the WOAP "special tab" slot (the
+// internal identifiers stay woap*/WOAP_* to minimise churn, but everything user-facing is fried
+// chicken). Christchurch's own take on Welly's Burger Wellington board: rank the city's fried-chicken
+// spots, rate the ones you've tried, add photos. Data lives in friedchicken.json.
+const WOAP_ENABLED    = true;
+let showWoap          = false;   // Fried Chicken tab — default OFF; the toggle reveals the leaderboard
+let woapView          = "board"; // "board" (leaderboard) | "map" (dedicated fried-chicken map)
+// Default leaderboard rank column. 'google' = Google rating (used now, while user ratings are still
+// thin), 'rating' = user star-rating average, 'ratings' = number of user ratings. Flip WOAP_DEFAULT_SORT
+// to 'rating' once enough people have rated to make the community score the headline.
+const WOAP_DEFAULT_SORT = 'google';
+let woapLbSort        = WOAP_DEFAULT_SORT; // active rank column: "google" | "rating" (avg stars) | "ratings" (count)
+const WOAP_RATINGS    = {};      // item slug → { avg, count }, batch-read from Supabase for the leaderboard
 let searchQuery       = "";      // live search string
 let DAILY_DEAL_KEYS   = new Set(); // populated after data load
 
@@ -989,10 +996,10 @@ async function loadData() {
       venues.forEach(v => { VENUES_MAP[v.venue] = v; });
     }
   } catch (e) {}
-  // Burger Wellington data — only pulled when the tab is live, so a dark flag adds zero page weight.
+  // Fried Chicken leaderboard data — only pulled when the tab is live, so a dark flag adds zero page weight.
   if (WOAP_ENABLED) {
     try {
-      const r = await fetch("woap_burgers.json", { cache: "no-cache" });
+      const r = await fetch("friedchicken.json", { cache: "no-cache" });
       if (r.ok) WOAP_BURGERS = await r.json();
     } catch (e) {}
   }
@@ -1244,8 +1251,11 @@ function renderCard(d) {
     : "";
 
   const venue = VENUES_MAP[d.venue] || {};
-  const venueName = (VENUE_PANEL_ENABLED && venue._slug)
-    ? `<button type="button" class="wd-venue-link" data-venue-open="${venue._slug}">${d.venue}</button>`
+  // The venue name is a real link to the generated /venue/<slug>.html page, so crawlers,
+  // no-JS visitors and open-in-new-tab all reach it. With the panel on, the delegated
+  // click handler intercepts a plain left click and opens the in-page profile instead.
+  const venueName = venue._slug
+    ? `<a class="wd-venue-link" href="/venue/${venue._slug}.html"${VENUE_PANEL_ENABLED ? ` data-venue-open="${venue._slug}"` : ''}>${d.venue}</a>`
     : venue.google_maps_url
       ? `<a href="${venue.google_maps_url}" target="_blank" rel="noopener"
             style="color:inherit;text-decoration:underline;text-underline-offset:2px;">${d.venue}</a>`
@@ -1489,10 +1499,23 @@ function fetchWoapRatings() {
 
 function woapPriceNum(b) { const m = String(b.price || '').match(/[\d.]+/); return m ? parseFloat(m[0]) : Infinity; }
 
-// Leaderboard ordering. Two rankable columns: average rating and number of ratings.
-// Either way, burgers with no ratings yet sort to the bottom (alphabetical among themselves).
+function woapGoogleRating(b) { return (typeof b.google_rating === 'number') ? b.google_rating : null; }
+
+// Leaderboard ordering. Three rankable columns: Google rating (default), user star average, and
+// number of user ratings. Whichever column is active, spots with no value for it sort to the bottom
+// (alphabetical among themselves) — unrated is never treated as 0.
 function woapLeaderboardSorted(list) {
   const arr = [...list];
+  if (woapLbSort === 'google') {                                   // rank by Google rating
+    return arr.sort((a, b) => {
+      const ga = woapGoogleRating(a), gb = woapGoogleRating(b);
+      if ((ga === null) !== (gb === null)) return ga === null ? 1 : -1;  // rated ahead of unrated (unrated last)
+      if (ga !== null && gb !== null && gb !== ga) return gb - ga;
+      const ca = b.google_reviews || 0, cb2 = a.google_reviews || 0;     // tie-break: more Google reviews first
+      if (ca !== cb2) return ca - cb2;
+      return (a.name || '').localeCompare(b.name || '');
+    });
+  }
   return arr.sort((a, b) => {
     const ra = WOAP_RATINGS[woapBurgerSlug(a)] || { avg: 0, count: 0 };
     const rb = WOAP_RATINGS[woapBurgerSlug(b)] || { avg: 0, count: 0 };
@@ -1517,6 +1540,10 @@ function renderWoapCard(b, bare) {
   const avgHtml = (r && r.count)
     ? `<span class="woap-avg">&#9733; ${r.avg.toFixed(1)} (${r.count})</span>`
     : `<span class="woap-avg-none">No ratings yet</span>`;
+  const g = woapGoogleRating(b);
+  const googleHtml = (g !== null) ? `<span class="woap-avg">&#9733; ${g.toFixed(1)} Google${b.google_reviews ? ` (${b.google_reviews})` : ''}</span>` : '';
+  const popular = (Array.isArray(b.popular_items) && b.popular_items.length)
+    ? `<p class="woap-desc"><strong>What to order:</strong> ${b.popular_items.join(', ')}</p>` : '';
   const diet = (b.dietary || []).map(d => `<span class="woap-diet">${d}</span>`).join('');
   const photosStrip = imgs.length ? `<div class="woap-photos">${imgs.map(src => `<img src="${src}" alt="" loading="lazy">`).join('')}</div>` : '';
   // bare = embedded in a leaderboard detail row: no card chrome, review widgets always open.
@@ -1530,23 +1557,25 @@ function renderWoapCard(b, bare) {
           <div class="woap-venue">${b.venue}${b.suburb ? ' &middot; ' + suburbLabel(b.suburb) : ''}</div>
           <div class="woap-meta">
             ${b.price ? `<span class="woap-price">${b.price}</span>` : ''}
+            ${googleHtml}
             ${avgHtml}
             ${diet}
           </div>
         </div>
       </div>
       ${b.desc ? `<p class="woap-desc">${b.desc}</p>` : ''}
+      ${popular}
       <button type="button" class="woap-tried${tried ? ' on' : ''}" data-woap-tried="${slug}">${tried ? '&#10003; Tried it' : '&#43; Mark as tried'}</button>
-      <button type="button" class="wd-plan-add woap-plan" data-plan-add="${slug}" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan" aria-label="Add this burger to your plan">&#43; Plan</button>
+      <button type="button" class="wd-plan-add woap-plan" data-plan-add="${slug}" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan" aria-label="Add this fried chicken to your plan">&#43; Plan</button>
       ${reviewBtn}
       <div class="woap-social${bare ? ' open' : ''}" data-woap-social="${slug}">
         ${photosStrip}
         <label class="woap-photo-add" for="woap-photo-${slug}">&#128247; Add a photo</label>
         <input class="woap-photo-input" type="file" id="woap-photo-${slug}" accept="image/*" data-woap-photo="${slug}">
         <div class="woap-photo-pending" data-woap-pending="${slug}"><img alt=""><span></span></div>
-        <div class="vp-section-title">Rate this burger</div>
+        <div class="vp-section-title">Rate this fried chicken</div>
         <div class="vr" data-vr-slug="${slug}">
-          <div class="vr-stars" role="radiogroup" aria-label="Rate this burger out of 5">
+          <div class="vr-stars" role="radiogroup" aria-label="Rate this fried chicken out of 5">
             ${[1,2,3,4,5].map(i => `<button type="button" class="vr-star" data-star="${i}" aria-label="${i} star${i>1?'s':''}">&#9733;</button>`).join("")}
           </div>
           <div class="vr-summary" data-vr-summary>Loading…</div>
@@ -1556,7 +1585,7 @@ function renderWoapCard(b, bare) {
           <div class="vc-list" data-vc-list><p class="sd-hint">Loading reviews…</p></div>
           <form class="vc-form" data-vc-form>
             <input type="text" class="vc-hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <textarea class="vc-input" data-vc-input maxlength="1000" rows="2" placeholder="Tried this burger? Leave a review — no account needed"></textarea>
+            <textarea class="vc-input" data-vc-input maxlength="1000" rows="2" placeholder="Tried this one? Leave a review — no account needed"></textarea>
             <div class="vc-row">
               <span class="vc-note" data-vc-note>Posts instantly &middot; be kind</span>
               <button type="submit" class="vp-btn primary vc-submit">Post</button>
@@ -1577,10 +1606,16 @@ function renderWoapRow(b, rank) {
   const avgCell = r.count
     ? `<span class="woap-lb-avg">${r.avg.toFixed(1)}<small>&#9733; avg</small></span>`
     : `<span class="woap-lb-avg none">&mdash;</span>`;
-  const rankCls = rank <= 3 && r.count ? 'woap-lb-rank top' : 'woap-lb-rank';
+  const g = woapGoogleRating(b);
+  const googleCell = (g !== null)
+    ? `<span class="woap-lb-google">${g.toFixed(1)}<small>&#9733; Google</small></span>`
+    : `<span class="woap-lb-google none">&mdash;</span>`;
+  // A row is "ranked" (shows a rank number) when it has a value for whatever the board is sorted by.
+  const ranked = woapLbSort === 'google' ? (g !== null) : !!r.count;
+  const rankCls = rank <= 3 && ranked ? 'woap-lb-rank top' : 'woap-lb-rank';
   return `
     <div class="woap-lb-row" data-lb-row="${slug}">
-      <span class="${rankCls}">${r.count ? rank : ''}</span>
+      <span class="${rankCls}">${ranked ? rank : ''}</span>
       <div class="woap-lb-cell-main">
         ${thumb}
         <div class="woap-lb-txt">
@@ -1588,6 +1623,7 @@ function renderWoapRow(b, rank) {
           <div class="woap-lb-venue">${b.venue}${b.suburb ? ' &middot; ' + suburbLabel(b.suburb) : ''}</div>
         </div>
       </div>
+      ${googleCell}
       ${avgCell}
       <span class="woap-lb-count">${r.count || 0}</span>
     </div>
@@ -1657,7 +1693,7 @@ function renderWoap() {
   };
 
   if (!woapRatingsLoaded) {
-    if (!board.querySelector('.woap-lb-row')) board.innerHTML = '<p class="text-sm italic" style="color:var(--ink-muted);">Loading burgers…</p>';
+    if (!board.querySelector('.woap-lb-row')) board.innerHTML = '<p class="text-sm italic" style="color:var(--ink-muted);">Loading fried chicken…</p>';
     fetchWoapRatings().then(() => { if (showWoap) paint(); });
     return;
   }
@@ -1762,7 +1798,9 @@ function eventIsPlannable(ev) { return !ev.club_rugby; }
 // rate.js / comment.js path as every deal — the "woap-" prefix just namespaces burgers away from
 // deals (which carry "-d-") and events ("-e-") so nothing can collide in the shared Supabase.
 function woapBurgerSlug(b) {
-  return ("woap-" + slugify(b.name || "burger") + "-" + slugify(b.venue || "venue")).slice(0, 120);
+  // Keep the "woap-" start (the plan integration keys off it), but insert a city marker so
+  // Christchurch fried-chicken ratings never collide with Welly's burger ratings in shared Supabase.
+  return ("woap-chch-fc-" + slugify(b.name || "item") + "-" + slugify(b.venue || "venue")).slice(0, 120);
 }
 
 // A Set of full day names → "Mon–Fri", "Sat, Sun", "Every day"
@@ -1908,7 +1946,7 @@ function renderDealDetail(slug) {
   return `
     <p class="dd-head"><span class="cat-badge cat-${d.category} px-2 py-0.5 rounded">${catLabel}</span></p>
     <h2 class="vp-name">${d.title}</h2>
-    <p class="vp-meta"><button type="button" class="wd-venue-link" data-venue-open="${venueSlug}">${d.venue}</button> &middot; ${suburbLabel(d.suburb)}</p>
+    <p class="vp-meta"><a class="wd-venue-link" href="/venue/${venueSlug}.html" data-venue-open="${venueSlug}">${d.venue}</a> &middot; ${suburbLabel(d.suburb)}</p>
     <p class="vp-when" style="margin-top:10px;">${when}${time ? " &middot; " + time : ""}</p>
     ${conf}
     <div class="vp-actions"><button type="button" class="wd-plan-add wd-plan-add-detail" data-plan-add="${slug}" data-plan-label-on="&#10003; In your plan" data-plan-label-off="&#43; Add to plan" aria-label="Add this deal to your plan">&#43; Add to plan</button></div>
@@ -2692,7 +2730,12 @@ loadData().then(() => {
     var dt = e.target.closest('[data-deal-open]');
     if (dt) { e.preventDefault(); location.hash = 'deal/' + dt.getAttribute('data-deal-open'); return; }
     var t = e.target.closest('[data-venue-open]');
-    if (t) { e.preventDefault(); location.hash = 'venue/' + t.getAttribute('data-venue-open'); return; }
+    if (t) {
+      // A modified click on the venue's /venue/<slug>.html link belongs to the browser
+      // (new tab, new window, save target) — only a plain left click opens the panel.
+      if (t.tagName === 'A' && (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button > 0)) return;
+      e.preventDefault(); location.hash = 'venue/' + t.getAttribute('data-venue-open'); return;
+    }
     // Tapping anywhere on a deal card (except its own buttons/links) opens the deal's landing page,
     // which carries the prominent "Add to plan" action.
     if (!e.target.closest('button, a, input, select, label, textarea')) {
@@ -3149,7 +3192,7 @@ loadData().then(() => {
           var bslug = woapBurgerSlug(b);
           var imgs = woapImagesFor(b, bslug);
           var thumb = imgs.length ? '<img src="'+imgs[0]+'" alt="">' : '';
-          return '<div class="map-popup-woap-row">'+thumb+'<span class="map-popup-woap-name"><b>&#127828; '+(b.name||'')+'</b>'+(b.price ? ' &middot; '+b.price : '')+'</span></div>';
+          return '<div class="map-popup-woap-row">'+thumb+'<span class="map-popup-woap-name"><b>&#127831; '+(b.name||'')+'</b>'+(b.price ? ' &middot; '+b.price : '')+'</span></div>';
         }).join('') + '</div>';
       }
     }
@@ -3160,7 +3203,7 @@ loadData().then(() => {
   function woapPin(){
     if (!_woapPin) _woapPin = L.divIcon({
       className: 'map-pin-event-wrap',
-      html: '<div class="map-pin-woap">&#127828;</div>',
+      html: '<div class="map-pin-woap">&#127831;</div>',
       iconSize: [22, 22], iconAnchor: [11, 11], popupAnchor: [0, -11]
     });
     return _woapPin;
@@ -3441,7 +3484,7 @@ loadData().then(() => {
         var blng = (typeof bc.lng === 'number') ? bc.lng : (typeof bb.lng === 'number' ? bb.lng : null);
         var meal = [bb.lunch ? 'Lunch' : '', bb.dinner ? 'Dinner' : ''].filter(Boolean).join(' & ');
         return { slug:slug, title:bb.name || 'Burger', venue:bb.venue || '', suburb:bb.suburb || '',
-                 when:'Burger Wellington' + (bb.price ? ' · ' + bb.price : ''), time:meal, lat:blat, lng:blng, woap:true };
+                 when:'Fried Chicken' + (bb.price ? ' · ' + bb.price : ''), time:meal, lat:blat, lng:blng, woap:true };
       }
     }
     return null;
@@ -3656,7 +3699,7 @@ loadData().then(() => {
     mcss2:'https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css',
     mjs: 'https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js'
   };
-  var WGTN = [-41.2889, 174.7772];
+  var WGTN = [-43.5320, 172.6306];
   var map = null, cluster = null, built = false, pin = null;
   function loadCss(h){ return new Promise(function(res){ var l=document.createElement('link'); l.rel='stylesheet'; l.href=h; l.onload=res; l.onerror=res; document.head.appendChild(l); }); }
   function loadJs(s){ return new Promise(function(res,rej){ var sc=document.createElement('script'); sc.src=s; sc.onload=res; sc.onerror=rej; document.head.appendChild(sc); }); }
@@ -3665,7 +3708,7 @@ loadData().then(() => {
     return Promise.all([loadCss(CDN.lcss), loadCss(CDN.mcss1), loadCss(CDN.mcss2)])
       .then(function(){ return loadJs(CDN.ljs); }).then(function(){ return loadJs(CDN.mjs); });
   }
-  function burgerPin(){ if(!pin) pin = L.divIcon({ className:'map-pin-event-wrap', html:'<div class="map-pin-woap">&#127828;</div>', iconSize:[22,22], iconAnchor:[11,11], popupAnchor:[0,-11] }); return pin; }
+  function burgerPin(){ if(!pin) pin = L.divIcon({ className:'map-pin-event-wrap', html:'<div class="map-pin-woap">&#127831;</div>', iconSize:[22,22], iconAnchor:[11,11], popupAnchor:[0,-11] }); return pin; }
   function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function popupHtml(b){
     var slug = woapBurgerSlug(b);
