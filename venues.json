@@ -3371,7 +3371,10 @@
     "is_chain": true,
     "google_rating": 4.1,
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Sal%27s+Authentic+New+York+Pizza+The+Hub+Hornby",
-    "notes": "Scanned 2026-07-25: no confirmable recurring deal surfaced. No deals or events found."
+    "notes": "Scanned 2026-07-25: no confirmable recurring deal surfaced. No deals or events found.",
+    "lat": -43.5425984,
+    "lng": 172.5240405,
+    "geocode_source": "OSM Nominatim (validated), 2026-08-07"
   },
   {
     "venue": "Cathay's Restaurant",
@@ -4854,7 +4857,10 @@
     "is_chain": false,
     "google_rating": 4.3,
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Savoire+Cafe+%26+Wine+Bar+Merivale+Mall+189+Papanui+Rd+Christchurch",
-    "notes": "Scanned 2026-07-25: Facebook (own channel, dated 19 Aug 2025) confirms a daily Winter Coffee Happy Hour 2:30-4:30pm, 20% off coffees. First Table (third-party) lists 50% off breakfast every day, first sitting 8:30am. 2 deals found."
+    "notes": "Scanned 2026-07-25: Facebook (own channel, dated 19 Aug 2025) confirms a daily Winter Coffee Happy Hour 2:30-4:30pm, 20% off coffees. First Table (third-party) lists 50% off breakfast every day, first sitting 8:30am. 2 deals found.",
+    "lat": -43.5125,
+    "lng": 172.6212151,
+    "geocode_source": "OSM Nominatim (validated), 2026-08-07"
   },
   {
     "venue": "NOKI",
@@ -8198,7 +8204,10 @@
     "is_chain": false,
     "google_rating": 4.1,
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Aroy+Thai+Eatery+Bush+Inn+Christchurch",
-    "notes": "Scanned 2026-07-25: discovery only, deal scan pending."
+    "notes": "Scanned 2026-07-25: discovery only, deal scan pending.",
+    "lat": -43.5301064,
+    "lng": 172.5750701,
+    "geocode_source": "Bush Inn Centre complex-mate, 2026-08-07"
   },
   {
     "venue": "Noodle Station",
@@ -8541,7 +8550,10 @@
     "is_chain": false,
     "google_rating": 4.7,
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Alis+Semisweets+Bakery+Bush+Inn+Christchurch",
-    "notes": "Scanned 2026-07-25: discovery only, deal scan pending. Halal."
+    "notes": "Scanned 2026-07-25: discovery only, deal scan pending. Halal.",
+    "lat": -43.5301064,
+    "lng": 172.5750701,
+    "geocode_source": "Bush Inn Centre complex-mate, 2026-08-07"
   },
   {
     "venue": "Village Bakehouse / Bakery",
@@ -9409,7 +9421,10 @@
     "is_chain": true,
     "google_rating": 4.3,
     "google_maps_url": null,
-    "notes": "Scanned 2026-07-25: found family packs, souvlaki combo and SuperGold discount promos but none pinned to a confirmed recurring day+time - not recorded."
+    "notes": "Scanned 2026-07-25: found family packs, souvlaki combo and SuperGold discount promos but none pinned to a confirmed recurring day+time - not recorded.",
+    "lat": -43.5949882,
+    "lng": 172.3884157,
+    "geocode_source": "OSM Nominatim (validated), 2026-08-07"
   },
   {
     "venue": "Ratanà Italian Restaurant & Pizzeria",
@@ -9572,7 +9587,10 @@
     "is_chain": false,
     "google_rating": 4.8,
     "google_maps_url": null,
-    "notes": "Scanned 2026-07-25: SuperGold 5% discount found but not day-specific; a $50 voucher giveaway is a one-off social promo. No qualifying weekly deal recorded."
+    "notes": "Scanned 2026-07-25: SuperGold 5% discount found but not day-specific; a $50 voucher giveaway is a one-off social promo. No qualifying weekly deal recorded.",
+    "lat": -43.5949882,
+    "lng": 172.3884157,
+    "geocode_source": "OSM Nominatim (validated), 2026-08-07"
   },
   {
     "venue": "Thai Terrace",
@@ -9631,8 +9649,9 @@
     "google_rating": 4.3,
     "google_maps_url": null,
     "notes": "Scanned 2026-07-25: small Christchurch group (Rolleston, BNZ, Upper Riccarton). Facebook/Instagram confirm current Tuesday special.",
-    "lat": -43.5321505,
-    "lng": 172.635783
+    "lat": -43.5951386,
+    "lng": 172.3881621,
+    "geocode_source": "Rolleston Square complex-mate, 2026-08-07"
   },
   {
     "venue": "Sushi Factory",
@@ -9870,7 +9889,10 @@
     "is_chain": false,
     "google_rating": null,
     "google_maps_url": null,
-    "notes": "Scanned 2026-07-25: made-to-order bakery/cake specialist. No day-specific deal found."
+    "notes": "Scanned 2026-07-25: made-to-order bakery/cake specialist. No day-specific deal found.",
+    "lat": -43.5890995,
+    "lng": 172.377538,
+    "geocode_source": "OSM Nominatim (validated), 2026-08-07"
   },
   {
     "venue": "Little Vietnam Eatery Rolleston",
