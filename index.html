@@ -3735,7 +3735,10 @@ loadData().then(() => {
     mcss2:'https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css',
     mjs: 'https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js'
   };
-  var WGTN = [-43.5320, 172.6306];
+  // Christchurch city centre. The value here was already correct, but it kept the
+  // template's WGTN name, which reads as a bug next to the deals map that genuinely
+  // WAS still centred on Wellington. Renamed so nobody "fixes" a working map.
+  var CITY_CENTRE = [-43.5320, 172.6306];
   var map = null, cluster = null, built = false, pin = null;
   function loadCss(h){ return new Promise(function(res){ var l=document.createElement('link'); l.rel='stylesheet'; l.href=h; l.onload=res; l.onerror=res; document.head.appendChild(l); }); }
   function loadJs(s){ return new Promise(function(res,rej){ var sc=document.createElement('script'); sc.src=s; sc.onload=res; sc.onerror=rej; document.head.appendChild(sc); }); }
@@ -3776,7 +3779,7 @@ loadData().then(() => {
     ensureLeaflet().then(function(){
       var el = document.getElementById('woapMap'); if (!el) return;
       if (!map){
-        map = L.map(el).setView(WGTN, 12);
+        map = L.map(el).setView(CITY_CENTRE, 12);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom:19, attribution:'&copy; OpenStreetMap contributors' }).addTo(map);
         cluster = L.markerClusterGroup({ maxClusterRadius:45 }); map.addLayer(cluster);
         built = true; refresh();
