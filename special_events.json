@@ -16,22 +16,6 @@
     "confidence": "high"
   },
   {
-    "venue": "Casa Publica",
-    "suburb": "Christchurch CBD",
-    "address": "180 Armagh Street, Christchurch Central City",
-    "date": "2026-07-26",
-    "title": "Festa Julina",
-    "desc": "Brazilian mid-year 'June Festival' celebration, held in July.",
-    "start": null,
-    "end": null,
-    "category": "food",
-    "annual": true,
-    "source_url": "https://casapublica.co.nz/whats-on",
-    "source_quote": "FESTA JULINA. 26 July. Festa Junina (literally \"June Festival\") is a vibrant traditional Brazilian celebration. That can also be celebrated in July. That's why Festa Julina.",
-    "verified_date": "2026-07-25",
-    "confidence": "high"
-  },
-  {
     "venue": "The Halswell",
     "suburb": "Halswell",
     "address": "344 Halswell Road, Halswell, Christchurch 8025",
@@ -156,22 +140,6 @@
     "annual": false,
     "source_url": "https://www.facebook.com/ArmadillosLyttelton",
     "source_quote": "LYTTELTON RUGBY CLUB PREMIER RESERVE FUNDRAISER! FRIDAY 7TH AUGUST - AROUND 5:30PM START RACE NIGHT | $25 ENTRY CASH PRIZES",
-    "verified_date": "2026-07-25",
-    "confidence": "high"
-  },
-  {
-    "venue": "Rangiora RSA Club and Spitfire Restaurant",
-    "suburb": "Rangiora",
-    "address": "82 Victoria Street, Rangiora 7400",
-    "date": "2026-07-31",
-    "title": "2nd Annual Joint Service Ball",
-    "desc": "Formal service ball at the Rangiora RSA Club, 5pm-11:30pm.",
-    "start": "17:00",
-    "end": "23:30",
-    "category": "entertainment",
-    "annual": true,
-    "source_url": "https://rangiorarsa.nz/events/2nd-annual-joint-service-ball/",
-    "source_quote": "2ND ANNUAL JOINT SERVICE BALL ... 31 July, 2026 5:00 pm - 11:30 pm",
     "verified_date": "2026-07-25",
     "confidence": "high"
   },
