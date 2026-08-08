@@ -11635,5 +11635,53 @@
     "notes": "Google Maps flags this listing as Permanently closed - excluded from active deals, kept for record.",
     "lat": -43.5417863,
     "lng": 172.6368114
+  },
+  {
+    "venue": "Riccarton Market",
+    "suburb": "Riccarton",
+    "address": "Riccarton Racecourse, 165 Racecourse Road, Riccarton, Christchurch",
+    "category_hint": "activity",
+    "website": "https://riccartonmarket.co.nz",
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": null,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Riccarton+Market+165+Racecourse+Road+Christchurch",
+    "notes": "Added 2026-08-08 as an event venue so the weekly Sunday market pins on the map. Discovery-only: rating/socials not yet enriched (PROCESS.md steps 1-3 not run).",
+    "lat": -43.5293956,
+    "lng": 172.5490989,
+    "geocode_source": "OSM Nominatim, 2026-08-08"
+  },
+  {
+    "venue": "Christchurch Farmers' Market",
+    "suburb": "Riccarton",
+    "address": "Riccarton House & Bush, 16 Kahu Road, Riccarton, Christchurch",
+    "category_hint": "activity",
+    "website": "https://christchurchfarmersmarket.co.nz",
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": null,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Christchurch+Farmers+Market+16+Kahu+Road+Riccarton+Christchurch",
+    "notes": "Added 2026-08-08 as an event venue so the weekly Saturday market pins on the map. Discovery-only: rating/socials not yet enriched.",
+    "lat": -43.5266235,
+    "lng": 172.5978201,
+    "geocode_source": "OSM Nominatim, 2026-08-08"
+  },
+  {
+    "venue": "The Court Theatre",
+    "suburb": "Christchurch CBD",
+    "address": "129 Gloucester Street, Christchurch Central, Christchurch 8011",
+    "category_hint": "activity",
+    "website": "https://courttheatre.org.nz",
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": null,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=The+Court+Theatre+129+Gloucester+Street+Christchurch",
+    "notes": "Added 2026-08-08 as an event venue so its shows pin on the map. Discovery-only: rating/socials not yet enriched.",
+    "lat": -43.5296293,
+    "lng": 172.6370429,
+    "geocode_source": "OSM Nominatim, 2026-08-08"
   }
 ]
