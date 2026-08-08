@@ -332,5 +332,20 @@
     "source_quote": "Winnie The Pooh: Trouble in Hundred Acre Wood 29 September 2026 - 10 October 2026 ... 29 Sep Tuesday 11:00 am Wakefield Family Front Room",
     "verified_date": "2026-08-08",
     "confidence": "high"
+  },
+  {
+    "venue": "Casa Publica",
+    "suburb": "Christchurch CBD",
+    "address": "180 Armagh Street, Christchurch Central City",
+    "date": "2026-11-21",
+    "title": "Hola Margarita",
+    "desc": "Margarita celebration at Casa Publica, 1pm-5pm.",
+    "start": "13:00",
+    "end": "17:00",
+    "category": "drinks",
+    "source_url": "https://casapublica.co.nz/whats-on",
+    "source_quote": "HOLA MARGARITA Saturday 21 Nov, 1-5pm",
+    "verified_date": "2026-08-08",
+    "confidence": "high"
   }
 ]
